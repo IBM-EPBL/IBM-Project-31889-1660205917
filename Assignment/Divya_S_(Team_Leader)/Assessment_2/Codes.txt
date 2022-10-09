@@ -1,0 +1,19 @@
+ from numpy import random
+a=random.randint(100)
+b=random.randint(100)
+print("Temperture in celsius =")
+print(a)
+print("Humidity in percent =")
+print(b)
+if(a>40):
+    if(b>45):
+        print("DANGER!!!!")
+        print("ALERT Detected for both  temperature & humidity")
+    else:
+        print("ALERT Detected only for temperature")
+elif(a==35):
+    print("Temperature reaches on threshold")
+else:
+    print("SAFE^.. All are Normal")
+
+
