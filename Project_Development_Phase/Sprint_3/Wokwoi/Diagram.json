@@ -1,0 +1,31 @@
+{
+    "version": 1,
+    "author": "Divya selvakumar",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -137.92, "left": -185.25, "attrs": {} },
+      {
+        "type": "wokwi-photoresistor-sensor",
+        "id": "ldr1",
+        "top": -70.12,
+        "left": -478.46,
+        "attrs": {}
+      },
+      {
+        "type": "wokwi-buzzer",
+        "id": "bz1",
+        "top": -104.84,
+        "left": 40.19,
+        "attrs": { "volume": "0.1" }
+      }
+    ],
+    "connections": [
+      [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+      [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+      [ "ldr1:VCC", "esp:3V3", "red", [ "h0" ] ],
+      [ "ldr1:AO", "esp:VP", "green", [ "h0" ] ],
+      [ "esp:GND.1", "ldr1:GND", "black", [ "h0" ] ],
+      [ "bz1:2", "esp:3V3", "green", [ "v0" ] ],
+      [ "bz1:1", "esp:D2", "green", [ "v0" ] ]
+    ]
+  }
